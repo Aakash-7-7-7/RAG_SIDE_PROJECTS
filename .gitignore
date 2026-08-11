@@ -1,56 +1,71 @@
 # =========================
-# ChromaDB / Vector Database
-# =========================
-chroma/
-chroma_db/
-chroma_db_data/
-*.chromadb
-
-# =========================
 # Python
 # =========================
+
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
+*$py.class
 
 # Virtual environments
-venv/
 .venv/
+venv/
 env/
 ENV/
 
 # =========================
 # Environment / Secrets
 # =========================
+
 .env
 .env.*
 !.env.example
 
 # =========================
+# ChromaDB
+# =========================
+
+chroma_db/
+memory_db/
+
+# =========================
 # Jupyter
 # =========================
+
 .ipynb_checkpoints/
 
 # =========================
 # IDE
 # =========================
+
 .vscode/
 .idea/
 
 # =========================
 # OS
 # =========================
+
 .DS_Store
 Thumbs.db
 
 # =========================
-# Logs
+# Logs / Temporary files
 # =========================
+
 *.log
+*.tmp
 
 # =========================
-# Model / Cache files
+# Python tooling
 # =========================
-.cache/
-*.gguf
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Build files
+# =========================
+
+build/
+dist/
+*.egg-info/
