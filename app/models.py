@@ -6,5 +6,5 @@ def get_llm():
         model=LM_STUDIO_MODEL,
         base_url=LM_STUDIO_BASE_URL,
         api_key="lm-studio",
-        temperature=0
+        temperature=0.7
     )

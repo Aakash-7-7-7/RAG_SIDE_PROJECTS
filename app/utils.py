@@ -19,12 +19,21 @@ REASONING_LINE_RE = re.compile(
 )
 
 
+# Strips a leading heading line like "**Updated Summary:**" or "Summary:"
+# that some models add despite being told not to.
+LEADING_HEADING_RE = re.compile(
+    r"^\s*\*{0,2}(updated\s+)?summary:?\*{0,2}\s*\n+",
+    flags=re.IGNORECASE,
+)
+
+
 def clean(text: str) -> str:
 
     if not text:
         return ""
 
     text = THINK_TAG_RE.sub("", text).strip()
+    text = LEADING_HEADING_RE.sub("", text).strip()
 
     # If the model followed instructions, everything after FINAL ANSWER:
     # is the real answer - use only that.
